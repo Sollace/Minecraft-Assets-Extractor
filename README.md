@@ -1,4 +1,4 @@
 # Minecraft-Assets-Extractor
 Super simple utility for reading files from the .minecraft/assets directory.
 
-Simply build and run it providing the input location and output location and all assets will be converted and outputted with human-readable names.
+Simply build and run it providing the location of the input input file and the output location and assets will be converted and outputted with a human-readable name.
