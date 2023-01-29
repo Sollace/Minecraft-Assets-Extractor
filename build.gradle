@@ -1,0 +1,26 @@
+plugins {
+	id 'java-library'
+	id 'eclipse'
+}
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
+}
+
+group = 'com.sollace'
+description = 'Minecraft Asset Extractor'
+archivesBaseName = project.name
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+  implementation 'com.google.code.gson:gson:2.8.+'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
