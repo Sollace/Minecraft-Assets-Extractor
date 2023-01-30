@@ -1,5 +1,5 @@
 plugins {
-	id 'java-library'
+	id 'java'
 	id 'eclipse'
 }
 
@@ -22,5 +22,15 @@ dependencies {
 }
 
 tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
+	options.encoding = "UTF-8"
+}
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'Main'
+	}
+	from {
+	  // dammit gradle
+		configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+	}
 }
